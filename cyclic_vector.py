@@ -36,3 +36,5 @@ class CyclicVector():
         else:
             self.head += 1
 
+    def change_capacity(self, increase_flg):
+        pass # empty function
