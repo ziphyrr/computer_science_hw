@@ -7,3 +7,12 @@ class CyclicVector():
         self.capacity = capacity
         self.elements = [DEF_ELEMENT] * capacity
 
+    def get(self, i):
+        if (
+            (self.head == self.tail) 
+            or (self.head < self.tail and (i < self.head or i >= self.tail)) 
+            or (self.head > self.tail and (i < self.head and i >= self.tail))
+        ):
+            return None
+        return self.elements[i]
+
