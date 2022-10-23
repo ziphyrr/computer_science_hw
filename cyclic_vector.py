@@ -19,3 +19,7 @@ class CyclicVector():
     def size(self): # random comment
         return (self.capacity - self.head + self.tail) % self.capacity
 
+    def add(self, x):
+        if self.size() + 2 > self.capacity:
+            self.change_capacity(True)
+        self.elements[self.tail] = x
