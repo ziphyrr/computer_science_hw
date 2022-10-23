@@ -27,3 +27,12 @@ class CyclicVector():
             self.tail = 0
         else:
             self.tail += 1
+
+    def erase_first(self):
+        if 4 * self.size() <= self.capacity:
+            self.change_capacity(False)
+        if self.head == self.capacity - 1:
+            self.head = 0
+        else:
+            self.head += 1
+
