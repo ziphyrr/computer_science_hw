@@ -23,3 +23,7 @@ class CyclicVector():
         if self.size() + 2 > self.capacity:
             self.change_capacity(True)
         self.elements[self.tail] = x
+        if self.tail == self.capacity - 1:
+            self.tail = 0
+        else:
+            self.tail += 1
