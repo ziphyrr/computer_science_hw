@@ -37,4 +37,15 @@ class CyclicVector():
             self.head += 1
 
     def change_capacity(self, increase_flg):
-        pass # empty function
+        if increase_flg == True:
+            new_elements = [DEF_ELEMENT] * (self.capacity * 2)
+        else:
+            new_elements = [DEF_ELEMENT] * (self.capacity // 2)
+        for i in range(self.size()):
+            new_elements[i] = self.elements[(self.head + i) % (self.capacity)]
+        
+        self.tail = self.size()
+        self.head = 0
+        self.elements = new_elements
+        self.capacity = self.capacity * 2 if increase_flg == True else self.capacity // 2
+
