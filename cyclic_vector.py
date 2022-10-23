@@ -16,3 +16,6 @@ class CyclicVector():
             return None
         return self.elements[i]
 
+    def size(self): # random comment
+        return (self.capacity - self.head + self.tail) % self.capacity
+
